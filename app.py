@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar 23 09:53:32 2022
-
 @author: __mitchew__
 """
 
@@ -22,12 +21,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Web App Title
-st.markdown('''
+#st.markdown('''
 # **EDA for Sparta X** 
-''')
-st.caption('''
+#''')
+#st.caption('''
 ## **Explanatory Data Analysis** 
-''')
+#''')
 
 # Upload CSV data
 with st.sidebar.header('Upload your CSV data'):
@@ -35,6 +34,9 @@ with st.sidebar.header('Upload your CSV data'):
  
 st.sidebar.selectbox("Select a model", (' Linear Regression','Logistic Regression','Random Forests','Decision Trees','Support Vector Machines (SVMs)','k-Nearest Neighbors'))
 
+
+st.sidebar.button(label = "Train the selected model")
+ 
 
 # Pandas Profiling Report
 if uploaded_file is not None:
@@ -44,11 +46,11 @@ if uploaded_file is not None:
         return csv
     df = load_csv()
     pr = ProfileReport(df, explorative=True)
-    st.header('**Input DataFrame**')
+    st.header('**Input Dataset**')
     st.write(df)
     st.write('---')
-    st.header('**Sparta X Profiling Report**')
-    st_profile_report(pr)
+    #st.header('**Sparta X Profiling Report**')
+    #st_profile_report(pr)
 else:
     st.info('Awaiting for CSV file to be uploaded.')
     if st.button('Press to use Example Dataset'):
@@ -59,12 +61,9 @@ else:
             return a
         df = load_data()
         pr = ProfileReport(df, explorative=True)
-        st.header('**Input DataFrame**')
+        st.header('**Input Dataset**')
         st.write(df)
         st.write('---')
-        st.header('**Pandas Profiling Report**')
-        st_profile_report(pr)
+        #st.header('**Pandas Profiling Report**')
+        #st_profile_report(pr)
 
-
-    
-    
