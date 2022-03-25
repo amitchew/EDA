@@ -54,7 +54,7 @@ else:
         @st.cache
         def load_data():
             a = pd.DataFrame(
-                np.random.rand(100, 5),
+                np.random.rand(400000, 5),
                 columns=['Date','Product Name','Unit Price', 'Quantity','Total']
             )
             return a
