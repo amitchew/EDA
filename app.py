@@ -32,6 +32,8 @@ st.caption('''
 # Upload CSV data
 with st.sidebar.header('Upload your CSV data'):
     uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
+ 
+st.sidebar.selectbox("Select a model", (' Linear Regression','Logistic Regression','Random Forests','Decision Trees','Support Vector Machines (SVMs)','k-Nearest Neighbors'))
 
 
 # Pandas Profiling Report
