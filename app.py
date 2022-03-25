@@ -53,10 +53,7 @@ else:
         # Example data
         @st.cache
         def load_data():
-            a = pd.DataFrame(
-                np.random.rand(400000, 5),
-                columns=['Date','Product Name','Unit Price', 'Quantity','Total']
-            )
+            a = pd.DataFrame(15 * np.random.randn(5, 4) + 60, columns=['Date','Product Name','Unit Price', 'Quantity','Total'])
             return a
         df = load_data()
         pr = ProfileReport(df, explorative=True)
