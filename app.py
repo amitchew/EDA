@@ -55,7 +55,7 @@ else:
         def load_data():
             a = pd.DataFrame(
                 np.random.rand(100, 5),
-                columns=['a', 'b', 'c', 'd', 'e']
+                columns=['Date','Product Name','Unit Price', 'Quantity','Total']
             )
             return a
         df = load_data()
