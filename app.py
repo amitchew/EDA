@@ -49,6 +49,22 @@ if uploaded_file is not None:
     st_profile_report(pr)
 else:
     st.info('Awaiting for CSV file to be uploaded.')
+        if st.button('Press to use Example Dataset'):
+        # Example data
+        @st.cache
+        def load_data():
+            a = pd.DataFrame(
+                np.random.rand(100000, 5),         
+                columns=['Date', 'Product Name', 'Unit Price', 'Quantity', 'Total']
+            )
+            return a
+        df = load_data()
+        pr = ProfileReport(df, explorative=True)
+        st.header('**Input DataFrame**')
+        st.write(df)
+        st.write('---')
+        st.header('**Sparta X Profiling Report**')
+        st_profile_report(pr)
 
 
     
